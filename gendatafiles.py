@@ -40,10 +40,8 @@ def run():
     print(len(meses), meses)
     print(df)
     print(random.randint(1, 13))
-    # for i in range(10):
-    #     print(f"{fake.first_name()} {fake.last_name()}",
-    #           fake.pyfloat(left_digits=None, right_digits=2, positive=True, min_value=10000, max_value=60000)
-    #           )
+    for mes in meses:
+        df.to_excel(dados.with_name(f"{mes}.xlsx"), index=False)
 
 
 if __name__ == '__main__':
