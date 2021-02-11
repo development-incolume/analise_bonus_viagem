@@ -6,6 +6,11 @@ authors = ["Britodfbr <britodfbr@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8.6"
+twilio = "^6.51.1"
+pandas = "^1.2.1"
+openpyxl = "^3.0.6"
+Faker = "^6.0.0"
+toml = "^0.10.2"
 
 [tool.poetry.dev-dependencies]
 
