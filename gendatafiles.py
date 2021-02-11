@@ -36,7 +36,7 @@ def gendata():
     fake.seed_instance(random.randint(1, 13))
     # gerador com 1000 entradas aleatórias para vendas
     vendas = (
-        fake.pyfloat(left_digits=None, right_digits=2, positive=True, min_value=1000, max_value=55100)
+        fake.pyfloat(left_digits=None, right_digits=2, positive=True, min_value=1000, max_value=55010)
         for _ in range(1000)
     )
     # Retorna uma lista de tuplas com VENDEDOR/VENDA
@@ -47,10 +47,10 @@ def run():
     """"""
     # Lista com nomes dos meses gerado em pandas
     meses = set(pd.date_range(start='2020-01-01', end='2020-6-1', periods=30).strftime('%B'))
-    # DataFrame com conjunto de dados gerados
-    df = pd.DataFrame(gendata(), columns=['VENDEDOR', 'VENDAS'])
-    # Grava arquivos com nomes dos meses em portugues com vendedores e suas respectivas vendas mensais
     for mes in meses:
+        # DataFrame com conjunto de dados gerados
+        df = pd.DataFrame(gendata(), columns=['VENDEDOR', 'VENDAS'])
+        # Grava arquivos com nomes dos meses em portugues com vendedores e suas respectivas vendas mensais
         df.to_excel(dados.with_name(f"{mes}.xlsx"), index=False)
 
 
