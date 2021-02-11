@@ -13,7 +13,7 @@ def send_sms(destinatario, msg=None, remetente=None):
     remetente = remetente or '+12674940492'
     msg = msg or "Hello from Python!"
     # Your Account SID from twilio.com/console
-    account_sid = toml.load(config)['twilio']['account_sig']
+    account_sid = toml.load(config)['twilio']['account_sid']
     # Your Auth Token from twilio.com/console
     auth_token = toml.load(config)['twilio']['auth_token']
 
@@ -43,7 +43,7 @@ for mes in lista_meses:
         # print(vendas)
         msg = f'Em {mes}, a meta > 55k, foi atingida por "{vendedor} com R$ {vendas:.2f}"'
         print(msg)
-        # send_sms('+5561999092244', msg)
+        send_sms('+5561999092244', msg)
 
     # Para cada arquivo:
     #     Verificar se algum valor na coluna vendas é superior a 55k
